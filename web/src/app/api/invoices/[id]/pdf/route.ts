@@ -571,7 +571,7 @@ export async function GET(req: Request, ctx: { params: Promise<{ id: string }> }
     const fileName = `${safeName}.pdf`;
     const encoded = encodeURIComponent(fileName);
 
-    return new NextResponse(pdfBytes, {
+    return new NextResponse(Buffer.from(pdfBytes), {
       status: 200,
       headers: {
         "Content-Type": "application/pdf",
