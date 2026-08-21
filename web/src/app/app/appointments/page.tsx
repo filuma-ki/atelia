@@ -453,7 +453,7 @@ export default function AppointmentsPage() {
       if (e.key === "Escape") closeMenu();
     }
     function onDown(e: MouseEvent) {
-      const btn = btnRefs.current[openMenuId];
+      const btn = openMenuId !== null ? btnRefs.current[openMenuId] : null;
       if (btn && btn.contains(e.target as Node)) return;
       if (menuRef.current && menuRef.current.contains(e.target as Node)) return;
       closeMenu();
